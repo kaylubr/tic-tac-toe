@@ -11,7 +11,7 @@
   </head>
   <body>
     <header>
-      <h1 id="player">Player Cece's turn</h1>
+      <h1 id="playerTurn"></h1>
       <img src="./images/refresh.svg" alt="refresh icon">
     </header>
     <div class="board"></div>
@@ -27,7 +27,22 @@
           <input type="text" name="player2name" id="player2" placeholder="ENTER PLAYER 2 NAME" required>
         </div>
         <div>
-          <button class="syne-mono-regular">Start</button>
+          <button class="syne-mono-regular startBtn">Start</button>
+        </div>
+      </div>
+    </dialog>
+    <dialog id="endDialog" class="sybne-mono-regular">
+      <div id="endDialogContainer">
+        <div>
+          <h1 id="winnerPlayer"></h1>
+        </div>
+        <div>
+          <img src="./gif/cat-celebration.gif" alt="happy cat" id="gif">
+        </div>
+        <div>
+          <button class="syne-mono-regular startBtn" id="playAgainBtn">
+            Play again
+          </button>
         </div>
       </div>
     </dialog>

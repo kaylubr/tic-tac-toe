@@ -30,16 +30,18 @@ body {
 
 /* Front page */
 
-#startDialog {
+#startDialog,
+#endDialog {
   background-color: var(--secondary-theme-color);
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   border-radius: 12px;
   position: absolute;
   border: none;
   width: 40vw;
-  height: 60vh;
-  top: 15%;
-  left: 30%;
+  min-width: 300px;
+  top: 10%;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 #dialogContainer {
@@ -47,7 +49,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 100%;
+  gap: 1rem;
 }
 
 #startDialog h1 {
@@ -61,7 +63,7 @@ body {
   padding: 0.8rem 2rem;
 }
 
-#startDialog button {
+.startBtn {
   cursor: pointer;
   border: none;
   border-radius: 8px;
@@ -70,7 +72,7 @@ body {
   color: var(--light-text-color);
 }
 
-#startDialog button:hover {
+.startBtn:hover {
   background-color: #303845;
 }
 
@@ -134,4 +136,31 @@ header > img:hover {
   cursor: pointer;
   background-color: #ababab;
   border: none;
+}
+
+/* End modal */
+
+#endDialogContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+#winnerPlayer {
+  font-size: 1.5rem;
+  color: var(--light-text-color);
+  text-align: center;
+}
+
+#playAgainBtn {
+  margin: 0 auto;
+}
+
+
+#gif {
+  margin: 12px 0px;
+  border-radius: 4px;
+  width: 20vw;
 }
