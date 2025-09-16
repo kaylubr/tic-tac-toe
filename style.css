@@ -147,7 +147,7 @@ header > img:hover {
 /* End modal */
 
 #endDialog {
-  top: 5%;
+  top: 20%;
   padding: 2rem;
 }
 
@@ -160,12 +160,13 @@ header > img:hover {
 }
 
 #winnerPlayer {
-  font-size: 1.5rem;
+  font-size: 3rem;
   color: var(--light-text-color);
   text-align: center;
 }
 
 #playAgainBtn {
+  font-size: 1.5rem;
   margin: 0 auto;
 }
 
