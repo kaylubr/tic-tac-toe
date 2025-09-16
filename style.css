@@ -90,7 +90,7 @@ body {
 header {
   width: 100vw;
   display: flex;
-  padding: 1rem;
+  padding: 2rem 1rem;
 }
 
 header > h1 {
