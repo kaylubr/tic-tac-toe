@@ -96,3 +96,16 @@ const GameController = (function() {
   return { playRound }
 })();
 
+
+const ScreenController = (function() {
+  const dialog = document.querySelector('#startDialog');
+  const startBtn = document.querySelector('#startDialog button');
+  const P1 = document.querySelector('#player1');
+  const P2 = document.querySelector('#player2');
+
+  dialog.showModal();
+
+  startBtn.addEventListener('click', () => {
+    dialog.close();
+  })
+})();

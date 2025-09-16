@@ -1,22 +1,73 @@
-.board {
-  display: grid;
-  height: 500px;
-  width: 500px;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  border: 1px solid black;
-  gap: 2px;
-  padding: 2px;
-  background-color: yellow;
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-.cell {
+:root {
+  --dark-background-color: linear-gradient(to right top, #222831, #2b333f, #333e4d, #3d495c, #46556b);
+  --primary-theme-color: #222831;
+  --secondary-theme-color: #393E46;
+  --light-text-color: #DFD0B8;
+  --dark-text-color: #948979;
+}
+
+/* Fonts */
+.syne-mono-regular {
+  color: var(--light-text-color);
+  font-family: "Syne Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  min-height: 100vh;
+  background-image: var(--dark-background-color);
+  position: relative;
+}
+
+#startDialog {
+  background-color: var(--secondary-theme-color);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 12px;
+  position: absolute;
+  border: none;
+  width: 40vw;
+  height: 60vh;
+  top: 15%;
+  left: 30%;
+}
+
+#dialogContainer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+  height: 100%;
+}
+
+#startDialog h1 {
   text-align: center;
-  font-size: 2rem;
-  border: 1px solid grey;
-  background: lightyellow;
+  margin-top: 1rem;
+}
+
+#startDialog input[type='text'] {
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 2rem;
+}
+
+#startDialog button {
   cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 2rem;
+  background-color: var(--primary-theme-color);
+  color: var(--light-text-color);
+}
+
+#startDialog button:hover {
+  background-color: #303845;
 }

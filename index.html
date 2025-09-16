@@ -4,9 +4,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Tic Tac Toe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    <dialog id="startDialog" class="syne-mono-regular">
+      <div id="dialogContainer">
+        <div>
+        <h1>TIC-TAC-TOE</h1>
+        </div>
+        <div>
+          <input type="text" name="player1name" id="player1" placeholder="ENTER PLAYER 1 NAME" required autofocus>
+        </div>
+        <div>
+          <input type="text" name="player2name" id="player2" placeholder="ENTER PLAYER 2 NAME" required>
+        </div>
+        <div>
+          <button class="syne-mono-regular">Start</button>
+        </div>
+      </div>
+    </dialog>
     <script src="script.js"></script>
   </body>
 </html>
