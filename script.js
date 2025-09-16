@@ -170,8 +170,8 @@ const ScreenController = (function() {
     });
 
     playAgainBtn.addEventListener('click', () => {
-      endDialog.close();
       reset();
+      endDialog.close();
       startDialog.showModal();
     });
 
@@ -230,7 +230,6 @@ const ScreenController = (function() {
         gif.src = './gif/james-doakes.gif';
         endDialog.showModal();
       }
-  
     }
   
     updateScreen();

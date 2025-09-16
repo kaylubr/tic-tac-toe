@@ -40,12 +40,11 @@ body {
   border: none;
   width: 40vw;
   min-width: 300px;
-  top: 7%;
   margin: 0 auto;
-  padding: 2rem;
 }
 
 #startDialog {
+  padding: 2rem;
   top: 15%;
 }
 
@@ -54,7 +53,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 #startDialog h1 {
@@ -72,7 +71,7 @@ body {
   cursor: pointer;
   border: none;
   border-radius: 8px;
-  padding: 0.5rem 2rem;
+  padding: 0.6rem 2rem;
   background-color: var(--primary-theme-color);
   color: var(--light-text-color);
 }
@@ -145,6 +144,11 @@ header > img:hover {
 
 /* End modal */
 
+#endDialog {
+  top: 5%;
+  padding: 2rem;
+}
+
 #endDialogContainer {
   display: flex;
   flex-direction: column;
@@ -178,6 +182,7 @@ header > img:hover {
 
 #restartDialog {
   margin-top: 30vh;
+  padding: 2rem 0;
 }
 
 #restartDialogContainer {
@@ -186,7 +191,7 @@ header > img:hover {
 }
 
 #restartDialogContainer > div:first-child {
-  margin: 1rem;
+  margin: 2rem 0 5rem 0;
 }
 
 #restartDialogContainer > div:last-child {
@@ -196,11 +201,23 @@ header > img:hover {
   gap: 1rem;
 }
 
+#restartBtn,
 #cancelBtn {
   cursor: pointer;
   border: none;
   border-radius: 8px;
   padding: 0.5rem 2rem;
+}
+
+#restartBtn {
+  background-color: rgb(20, 79, 20);
+}
+
+#restartBtn:hover {
+  background-color: rgb(38, 89, 38);
+}
+
+#cancelBtn {
   background-color: rgb(180, 24, 24);
 }
 
