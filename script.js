@@ -36,13 +36,14 @@ const Gameboard = (function() {
 const Player = function(name, mark) {
   const getName = () => name;
   const getMark = () => mark;
+  const setName = newName => name = newName
 
-  return { getName, getMark }
+  return { getName, getMark, setName }
 }
 
 const GameController = (function() {
-  const P1 = Player('Kyle', 'X');
-  const P2 = Player('Cece', 'O');
+  const P1 = Player('John', 'X');
+  const P2 = Player('Doe', 'O');
 
   const board = Gameboard;
 
@@ -89,15 +90,18 @@ const GameController = (function() {
     switchActivePlayer();
     board.printBoard();
   }
-  
-  // Initial board 
-  board.printBoard();
 
-  return { playRound }
+  return { 
+    playRound,
+    nameSetter: { p1: P1.setName, p2: P2.setName },
+    board: Gameboard.getBoard()
+  }
 })();
 
 
 const ScreenController = (function() {
+  const game = GameController;
+  const boardDiv = document.querySelector('.board');
   const dialog = document.querySelector('#startDialog');
   const startBtn = document.querySelector('#startDialog button');
   const P1 = document.querySelector('#player1');
@@ -106,6 +110,25 @@ const ScreenController = (function() {
   dialog.showModal();
 
   startBtn.addEventListener('click', () => {
+    if (P1.value === '' || P2.value === '') return;
     dialog.close();
   })
+
+  const updateScreen = () => {
+    const board = game.board;
+    
+    board.forEach((row, rowIndex) => {
+      row.forEach((cell, colIndex) => {
+        const button = document.createElement('button');
+        button.classList.add('cells');
+        button.dataset.column = rowIndex;
+        button.dataset.row = colIndex;
+        button.textContent = cell.getMark();
+        boardDiv.append(button);
+      })
+    })
+  }
+
+
+  updateScreen();
 })();
