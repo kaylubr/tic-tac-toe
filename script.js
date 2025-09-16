@@ -151,6 +151,9 @@ const ScreenController = (function() {
     const cell = e.target;
     const row = cell.dataset.row;
     const col = cell.dataset.column;
+
+    if (cell.textContent !== '') return;
+
     cell.textContent = game.getActivePlayer().getMark();
 
     // Play the round 
