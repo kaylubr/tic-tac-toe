@@ -52,8 +52,40 @@ const GameController = (function() {
     activePlayer = activePlayer === P1 ? P2 : P1;
   }
 
+  const checkWin = (activePlayer) => {
+    const WIN_PATTERNS = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6]
+    ];
+
+    const mappedBoard = board.getBoard().map(row => row.map(cell => cell.getMark())).flat();
+
+    for (let pattern of WIN_PATTERNS) {
+      const pattern1 = pattern[0];
+      const pattern2 = pattern[1];
+      const pattern3 = pattern[2];
+      
+      if (mappedBoard[pattern1] !== '' && mappedBoard[pattern1] === mappedBoard[pattern2] && mappedBoard[pattern1] === mappedBoard[pattern3]) {
+        console.log(`${activePlayer.getName()} WON!!`);
+        return;
+      } 
+    }
+
+    if (!mappedBoard.includes('')) {
+      console.log('TIE');
+      return;
+    }
+  }
+
   const playRound = (row, column) => {
     board.addMark(row, column, activePlayer.getMark());
+    checkWin(activePlayer);
     switchActivePlayer();
     board.printBoard();
   }
@@ -64,4 +96,3 @@ const GameController = (function() {
   return { playRound }
 })();
 
-const game = GameController;
