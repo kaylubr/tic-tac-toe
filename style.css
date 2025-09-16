@@ -31,7 +31,8 @@ body {
 /* Front page */
 
 #startDialog,
-#endDialog {
+#endDialog,
+#restartDialog {
   background-color: var(--secondary-theme-color);
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   border-radius: 12px;
@@ -42,6 +43,10 @@ body {
   top: 7%;
   margin: 0 auto;
   padding: 2rem;
+}
+
+#startDialog {
+  top: 15%;
 }
 
 #dialogContainer {
@@ -77,7 +82,7 @@ body {
 }
 
 ::backdrop {
-  background-color: var(--primary-theme-color);
+  backdrop-filter: blur(10px);
 }
 
 /* Header */
@@ -167,4 +172,38 @@ header > img:hover {
   margin: 12px 0px;
   border-radius: 4px;
   width: 70%;
+}
+
+/* Restart dialog */
+
+#restartDialog {
+  margin-top: 30vh;
+}
+
+#restartDialogContainer {
+  color: var(--light-text-color);
+  text-align: center;
+}
+
+#restartDialogContainer > div:first-child {
+  margin: 1rem;
+}
+
+#restartDialogContainer > div:last-child {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+#cancelBtn {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 2rem;
+  background-color: rgb(180, 24, 24);
+}
+
+#cancelBtn:hover {
+  background-color: rgb(150, 21, 21);
 }

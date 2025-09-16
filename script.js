@@ -65,7 +65,7 @@ const GameController = (function() {
     winner = null;
     activePlayer = P1;
   }
-  
+
   const checkWin = (activePlayer) => {
     const WIN_PATTERNS = [
       [0, 1, 2],
@@ -123,9 +123,12 @@ const ScreenController = (function() {
   const boardDiv = document.querySelector('.board');
   const startDialog = document.querySelector('#startDialog');
   const endDialog = document.querySelector('#endDialog');
+  const restartDialog = document.querySelector('#restartDialog');
   const startBtn = document.querySelector('#startDialog button');
   const playAgainBtn = document.querySelector('#playAgainBtn');
   const refreshBtn = document.querySelector('#refreshBtn');
+  const confirmRefresh = document.querySelector('#restartBtn');
+  const cancelRefresh = document.querySelector('#cancelBtn');
   const playerTurn = document.querySelector('#playerTurn');
   const P1 = document.querySelector('#player1');
   const P2 = document.querySelector('#player2');
@@ -171,7 +174,19 @@ const ScreenController = (function() {
       reset();
       startDialog.showModal();
     });
-  
+
+    refreshBtn.addEventListener('click', () => {
+      restartDialog.showModal();
+    });
+
+    confirmRefresh.addEventListener('click', () => {
+      restartDialog.close();
+      reset();
+      startDialog.showModal();
+    });
+
+    cancelRefresh.addEventListener('click', () => restartDialog.close());
+
     boardDiv.addEventListener('click', e => {
       // Change content of the cell that was clicked
       const cell = e.target;
