@@ -111,6 +111,8 @@ const ScreenController = (function() {
 
   startBtn.addEventListener('click', () => {
     if (P1.value === '' || P2.value === '') return;
+    game.nameSetter.p1(P1.value);
+    game.nameSetter.p2(P2.value);
     dialog.close();
   })
 
@@ -128,7 +130,6 @@ const ScreenController = (function() {
       })
     })
   }
-
 
   updateScreen();
 })();
