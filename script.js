@@ -157,11 +157,16 @@ const ScreenController = (function() {
     game.playRound(row, col);
     playerTurn.textContent = `Player ${game.getActivePlayer().getName()}'s turn`;
 
-    // Reset screen
+    // Renders winner or tie screen if there is any
     if (game.getWinner() && game.getWinner() !== 'TIE') {
       renderWinner('win');
+      return;
+    } else if (game.getWinner() === 'TIE') {
+      renderWinner('tie');
+      return;
     }
-
+    
+    // Reset screen
     updateScreen();
   });
 
@@ -169,11 +174,17 @@ const ScreenController = (function() {
 
     // Reset board
     boardDiv.textContent = '';
+    const endDialog = document.querySelector('#endDialog');
+    const endHeader = document.querySelector('#winnerPlayer');
+    const gif = document.querySelector('#gif');
 
     if (mode === 'win') {
-      const endDialog = document.querySelector('#endDialog');
-      const endHeader = document.querySelector('#winnerPlayer');
       endHeader.textContent = `${game.getActivePlayer().getName()} won the game!`;
+      gif.src = './gif/cat-celebration.gif';
+      endDialog.showModal();
+    } else if (mode === 'tie') {
+      endHeader.textContent = "It's a tie!";
+      gif.src = './gif/james-doakes.gif';
       endDialog.showModal();
     }
 
